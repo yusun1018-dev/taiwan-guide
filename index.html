@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>대만생활 길잡이</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<!--
+  ✏️ 수정 안내: 전화번호·주소는 바뀔 수 있으니 공식 사이트에서 확인 후 고쳐 주세요.
+  항목 하나 = <details class="sec" id="..." data-k="검색어"> ... </details>
+-->
+<style>
+  :root{
+    --bg:#fafaf8; --card:#ffffff; --ink:#1a1c1e; --sub:#6b6f75; --faint:#9a9ea4;
+    --line:#ecebe7; --accent:#0f5f5c; --accent-soft:#e8f1f0; --warn:#b4372f;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){--bg:#121314;--card:#1b1d1f;--ink:#ececea;--sub:#a3a7ad;--faint:#73777d;
+      --line:#2a2d30;--accent:#6cc3bd;--accent-soft:#1d2e2d;--warn:#f08a80;color-scheme:dark}
+  }
+  :root[data-theme="dark"]{--bg:#121314;--card:#1b1d1f;--ink:#ececea;--sub:#a3a7ad;--faint:#73777d;
+      --line:#2a2d30;--accent:#6cc3bd;--accent-soft:#1d2e2d;--warn:#f08a80;color-scheme:dark}
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;letter-spacing:-.01em;
+       font-family:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","PingFang TC","Microsoft JhengHei",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:560px;margin:0 auto;padding:0 20px}
+
+  header{padding:calc(48px + env(safe-area-inset-top,0px)) 0 28px}
+  .eyebrow{font-size:.78rem;letter-spacing:.18em;color:var(--accent);font-weight:600}
+  h1{margin:10px 0 0;font-size:2.1rem;line-height:1.25;font-weight:700;letter-spacing:-.03em}
+  .lead{margin:12px 0 0;color:var(--sub);font-size:.98rem}
+
+  .sos{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .sos a{background:var(--card);text-decoration:none;padding:14px 8px;text-align:center}
+  .sos b{display:block;font-size:1.35rem;font-weight:700;color:var(--warn);letter-spacing:-.02em}
+  .sos span{font-size:.74rem;color:var(--sub)}
+
+  .links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  .links a{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:border-color .2s}
+  .links a:hover{border-color:var(--accent)}
+  .links small{display:block;font-size:.72rem;color:var(--faint);letter-spacing:.04em}
+  .links strong{display:block;font-weight:600;font-size:.98rem;margin-top:2px}
+  .links .arrow{color:var(--accent);float:right}
+
+  .bar{position:sticky;top:0;z-index:5;background:var(--bg);padding:calc(14px + env(safe-area-inset-top,0px)) 0 10px;margin-top:20px}
+  .bar input{width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font:inherit;font-size:.95rem;outline:none}
+  .bar input:focus{border-color:var(--accent)}
+  .chips{display:flex;gap:6px;overflow-x:auto;margin-top:10px;padding-bottom:2px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chips a{flex:none;text-decoration:none;font-size:.82rem;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--card)}
+
+  .sec{border-top:1px solid var(--line);scroll-margin-top:120px}
+  .sec:last-of-type{border-bottom:1px solid var(--line)}
+  summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:14px;padding:20px 0}
+  summary::-webkit-details-marker{display:none}
+  .num{font-size:.78rem;color:var(--faint);font-variant-numeric:tabular-nums;width:20px}
+  .ttl{font-size:1.08rem;font-weight:600}
+  .ttl em{font-style:normal;font-weight:400;color:var(--faint);font-size:.82rem;margin-left:6px}
+  summary::after{content:"";margin-left:auto;width:8px;height:8px;border-right:1.5px solid var(--faint);border-bottom:1.5px solid var(--faint);transform:rotate(45deg);transition:transform .2s;align-self:center}
+  details[open] summary::after{transform:rotate(-135deg)}
+  details[open] .ttl{color:var(--accent)}
+  .body{padding:0 0 22px 34px;font-size:.95rem}
+  .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line)}
+  .row:last-child{border-bottom:0}
+  .row .v{text-align:right;white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums}
+  .row .v a{color:var(--accent);text-decoration:none}
+  .s{display:block;font-size:.8rem;color:var(--faint);font-weight:400}
+  h3{font-size:.82rem;letter-spacing:.06em;color:var(--sub);font-weight:600;margin:18px 0 4px}
+  h3:first-child{margin-top:0}
+  ul{margin:0;padding-left:0;list-style:none}
+  li{position:relative;padding-left:14px;margin:7px 0}
+  li::before{content:"";position:absolute;left:0;top:.75em;width:5px;height:1px;background:var(--faint)}
+  .note{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--accent-soft);font-size:.88rem;color:var(--ink)}
+  .actions{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+  .actions a{font-size:.85rem;text-decoration:none;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:6px 14px}
+  .zh{font-size:1.02rem}
+  .story{display:block;margin-top:14px;padding:14px 16px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;background:var(--card);text-decoration:none}
+  .story small{display:block;font-size:.72rem;letter-spacing:.06em;color:var(--accent);font-weight:600}
+  .story strong{display:block;margin-top:3px;font-weight:600}
+  .story span{display:block;font-size:.82rem;color:var(--faint);margin-top:2px}
+  .empty{text-align:center;color:var(--faint);padding:40px 0}
+
+  footer{padding:40px 0 calc(40px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--faint);font-size:.8rem;line-height:1.8}
+  footer .sign{font-size:.95rem;color:var(--ink);letter-spacing:.3em;margin-bottom:6px}
+  footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">TAIWAN · 臺灣生活</div>
+    <h1>대만에서,<br>오늘을 살아가는<br>한국인을 위해</h1>
+    <p class="lead">낯선 땅의 하루가 조금 더 편안하도록.<br>꼭 필요한 정보만 담았습니다.</p>
+  </header>
+
+  <div class="sos">
+    <a href="tel:110"><b>110</b><span>경찰</span></a>
+    <a href="tel:119"><b>119</b><span>화재 · 구급</span></a>
+    <a href="tel:+886912069230"><b>대표부</b><span>24시간 긴급</span></a>
+  </div>
+
+  <div class="links">
+    <a href="https://blog.naver.com/sungd1018" target="_blank" rel="noopener">
+      <small>BLOG <span class="arrow">↗</span></small><strong>삶,숨,쉼,샘</strong></a>
+    <a href="https://hsinchukoreanchurch.imweb.me" target="_blank" rel="noopener">
+      <small>CHURCH <span class="arrow">↗</span></small><strong>신죽한국교회</strong></a>
+  </div>
+
+  <div class="bar">
+    <input id="q" type="search" placeholder="찾고 싶은 것 — 병원, 거류증, 쓰레기, 택시">
+    <nav class="chips">
+      <a href="#s1">긴급</a><a href="#s2">대표부</a><a href="#s3">거류증</a><a href="#s4">병원</a>
+      <a href="#s5">교통</a><a href="#s5b">운전면허</a><a href="#s6">생활</a><a href="#s7">휴대폰·은행</a><a href="#s8">앱</a><a href="#s9">중국어</a><a href="#s10">재난</a>
+    </nav>
+  </div>
+
+  <main>
+    <details class="sec" id="s1" data-k="긴급 전화 신고 사기 경찰 구급차 응급 핫라인 외국인" open>
+      <summary><span class="num">01</span><span class="ttl">긴급 · 상담 전화<em>緊急</em></span></summary>
+      <div class="body">
+        <div class="row"><div>경찰 신고<span class="s">警察 · 사건·사고·분실</span></div><div class="v"><a href="tel:110">110</a></div></div>
+        <div class="row"><div>화재 · 구급차<span class="s">消防 / 救護車</span></div><div class="v"><a href="tel:119">119</a></div></div>
+        <div class="row"><div>외국인 생활상담 (24시간)<span class="s">外來人士在臺生活諮詢熱線</span></div><div class="v"><a href="tel:1990">1990</a><span class="s"><a href="tel:0800024111">0800-024-111</a></span></div></div>
+        <div class="row"><div>사기 의심 신고<span class="s">反詐騙諮詢專線</span></div><div class="v"><a href="tel:165">165</a></div></div>
+        <div class="row"><div>가정폭력 · 성폭력 보호<span class="s">保護專線</span></div><div class="v"><a href="tel:113">113</a></div></div>
+        <div class="row"><div>감염병 · 방역 상담<span class="s">防疫專線</span></div><div class="v"><a href="tel:1922">1922</a></div></div>
+        <div class="note">위치를 말할 땐 근처 편의점 이름이나 큰길 이름(○○路)을 말하면 빠릅니다.</div>
+      </div>
+    </details>
+
+    <details class="sec" id="s2" data-k="대표부 대사관 영사 여권 분실 재외국민 영사콜센터">
+      <summary><span class="num">02</span><span class="ttl">주타이베이 대한민국 대표부<em>駐台北韓國代表部</em></span></summary>
+      <div class="body">
+        <div class="row"><div>대표 전화 (근무시간)</div><div class="v"><a href="tel:+886227588320">02-2758-8320</a></div></div>
+        <div class="row"><div>사건 · 사고 긴급 (24시간)</div><div class="v"><a href="tel:+886912069230">0912-069-230</a></div></div>
+        <div class="row"><div>외교부 영사콜센터 (24시간)</div><div class="v"><a href="tel:+82232100404">+82-2-3210-0404</a></div></div>
+        <h3>주소</h3>
+        <p style="margin:0">台北市信義區基隆路一段333號 國際貿易大樓 15樓 1506室<span class="s">MRT 台北101/世貿站 인근</span></p>
+        <div class="actions">
+          <a href="https://overseas.mofa.go.kr/tw-ko/index.do" target="_blank" rel="noopener">홈페이지 ↗</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=台北市信義區基隆路一段333號" target="_blank" rel="noopener">지도 ↗</a>
+        </div>
+        <div class="note">여권 분실 시 — 경찰서에서 분실신고증명(遺失報案證明) 발급 → 사진 2매 준비 → 대표부 방문</div>
+      </div>
+    </details>
+
+    <details class="sec" id="s3" data-k="거류증 ARC 비자 체류 이민서 연장 외국인등록">
+      <summary><span class="num">03</span><span class="ttl">체류 · 거류증<em>居留證 ARC</em></span></summary>
+      <div class="body">
+        <ul>
+          <li>장기 체류자는 거류증(ARC)이 필요하며, 발급·연장·주소 변경은 이민서(移民署) 담당입니다.</li>
+          <li>주소·직장·학교가 바뀌면 이민서에 신고합니다.</li>
+          <li>체류 기간 만료 전에 연장 신청하세요. 대부분 온라인 예약이 가능합니다.</li>
+        </ul>
+        <div class="actions"><a href="https://www.immigration.gov.tw/" target="_blank" rel="noopener">이민서 ↗</a></div>
+        <div class="note">ARC 번호는 병원·휴대폰·은행·택배 등 거의 모든 곳에서 쓰입니다. 사진으로 남겨 두세요.</div>
+      </div>
+    </details>
+
+    <details class="sec" id="s4" data-k="병원 의료 건강보험 건보 약국 진료 아플때 응급실 치과">
+      <summary><span class="num">04</span><span class="ttl">병원 · 건강보험<em>全民健保</em></span></summary>
+      <div class="body">
+        <h3>건강보험</h3>
+        <ul>
+          <li>ARC 소지 후 일정 기간 체류하면 가입 대상이 됩니다. 직장인은 회사를 통해 가입합니다.</li>
+          <li>건보카드(健保卡)가 있으면 진료비 부담이 크게 줄어듭니다.</li>
+        </ul>
+        <div class="row"><div>건강보험 상담<span class="s">健保署諮詢專線</span></div><div class="v"><a href="tel:0800030598">0800-030-598</a></div></div>
+        <h3>병원 이용</h3>
+        <ul>
+          <li>가벼운 증상은 진료소(診所), 큰 병은 병원(醫院).</li>
+          <li>대형 병원은 홈페이지·앱으로 예약(掛號) 후 방문하면 편합니다.</li>
+          <li>야간·휴일 응급은 급진(急診), 약국은 藥局.</li>
+        </ul>
+        <div class="actions"><a href="https://www.nhi.gov.tw/" target="_blank" rel="noopener">건강보험서 ↗</a></div>
+      </div>
+    </details>
+
+    <details class="sec" id="s5" data-k="교통 지하철 MRT 버스 이지카드 고속철도 택시 기차 유바이크 자전거">
+      <summary><span class="num">05</span><span class="ttl">교통<em>交通</em></span></summary>
+      <div class="body">
+        <ul>
+          <li><b>이지카드(悠遊卡)·아이패스(一卡通)</b> — 지하철·버스·편의점 결제. 편의점에서 충전.</li>
+          <li><b>MRT(捷運)</b> — 타이베이·신베이·타오위안·타이중·가오슝. 차내 음식·음료 금지.</li>
+          <li><b>고속철도(高鐵)</b> — 타이베이↔가오슝 약 1시간 반. 앱 T Express로 예매.</li>
+          <li><b>일반 기차(台鐵)</b> — 동부(화롄·타이둥) 여행에.</li>
+          <li><b>유바이크(YouBike)</b> — 공공자전거, 이지카드로 대여.</li>
+        </ul>
+        <div class="row"><div>택시 호출<span class="s">台灣大車隊</span></div><div class="v"><a href="tel:55688">55688</a></div></div>
+        <div class="row"><div>관광 안내<span class="s">觀光諮詢熱線</span></div><div class="v"><a href="tel:0800011765">0800-011-765</a></div></div>
+      </div>
+    </details>
+
+    <details class="sec" id="s5b" data-k="운전면허 면허증 운전 감리소 監理 자동차 오토바이 신주 新竹">
+      <summary><span class="num">06</span><span class="ttl">운전면허<em>駕照</em></span></summary>
+      <div class="body">
+        <ul>
+          <li>대만에 장기 체류하며 운전하려면 대만 운전면허증이 필요합니다.</li>
+          <li>발급은 각 지역 감리소(監理所 · 監理站)에서 합니다. ARC가 있어야 합니다.</li>
+          <li>준비 서류와 절차는 지역·시기마다 다를 수 있으니, 방문 전 감리소에 확인하세요.</li>
+        </ul>
+        <a class="story" href="https://blog.naver.com/sungd1018/223563123957" target="_blank" rel="noopener">
+          <small>peacemaker의 대만살이 노트 ↗</small>
+          <strong>대만 신주에서 대만운전면허증 발급받기</strong>
+          <span>직접 다녀온 발급 과정 후기 — 블로그에서 자세히 보기</span>
+        </a>
+      </div>
+    </details>
+
+    <details class="sec" id="s6" data-k="쓰레기 분리수거 재활용 음식물 쓰레기차 생활 편의점 택배">
+      <summary><span class="num">07</span><span class="ttl">쓰레기 · 생활<em>生活</em></span></summary>
+      <div class="body">
+        <h3>쓰레기 버리기</h3>
+        <ul>
+          <li>정해진 시간에 오는 쓰레기차에 직접 버립니다. 음악 소리가 들리면 차가 온 것입니다.</li>
+          <li>일반 쓰레기 — 타이베이·신베이는 지정 봉투(專用垃圾袋), 편의점·마트에서 판매.</li>
+          <li>재활용(資源回收)과 음식물(廚餘)은 따로 분리합니다.</li>
+          <li>쓰레기차 시간은 지역별로 다릅니다. 구청(區公所) 홈페이지나 앱에서 확인하세요.</li>
+        </ul>
+        <h3>편의점</h3>
+        <ul><li>공과금 납부, 택배 발송·수령, 교통카드 충전, 복사·출력까지 가능합니다.</li></ul>
+      </div>
+    </details>
+
+    <details class="sec" id="s7" data-k="휴대폰 유심 개통 은행 계좌 통장 인터넷 송금">
+      <summary><span class="num">08</span><span class="ttl">휴대폰 · 은행<em>手機 · 銀行</em></span></summary>
+      <div class="body">
+        <ul>
+          <li><b>휴대폰</b> — 中華電信 · 台灣大哥大 · 遠傳 매장에서 여권 + ARC로 개통.</li>
+          <li><b>은행</b> — 여권 + ARC(+ 재직·재학 증명). 은행마다 서류가 달라 미리 문의하세요.</li>
+          <li>모바일 결제(LINE Pay, 街口, 台灣Pay)에는 대만 휴대폰 번호가 필요합니다.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="sec" id="s8" data-k="앱 어플 추천 지도 배달 라인 날씨">
+      <summary><span class="num">09</span><span class="ttl">유용한 앱<em>APP</em></span></summary>
+      <div class="body">
+        <div class="row"><div>LINE<span class="s">대만의 국민 메신저</span></div><div class="v">필수</div></div>
+        <div class="row"><div>Google 지도<span class="s">길찾기 · 버스 도착 시간</span></div><div class="v">필수</div></div>
+        <div class="row"><div>台北捷運Go · 高雄捷運<span class="s">지하철 노선 · 시간</span></div><div class="v">교통</div></div>
+        <div class="row"><div>T Express<span class="s">고속철도 예매</span></div><div class="v">교통</div></div>
+        <div class="row"><div>foodpanda · Uber Eats<span class="s">음식 배달</span></div><div class="v">생활</div></div>
+        <div class="row"><div>健保快易通<span class="s">건강보험</span></div><div class="v">의료</div></div>
+        <div class="row"><div>中央氣象署<span class="s">날씨 · 태풍 · 지진</span></div><div class="v">안전</div></div>
+      </div>
+    </details>
+
+    <details class="sec" id="s9" data-k="중국어 회화 표현 말 대화 화장실 얼마 도와주세요">
+      <summary><span class="num">10</span><span class="ttl">바로 쓰는 중국어<em>華語</em></span></summary>
+      <div class="body">
+        <div class="row"><div>도와주세요</div><div class="v"><span class="zh">請幫我</span><span class="s">칭 빵 워</span></div></div>
+        <div class="row"><div>화장실 어디예요?</div><div class="v"><span class="zh">廁所在哪裡？</span><span class="s">처쒀 짜이 나리</span></div></div>
+        <div class="row"><div>얼마예요?</div><div class="v"><span class="zh">多少錢？</span><span class="s">뚜어사오 치엔</span></div></div>
+        <div class="row"><div>봉투 필요 없어요</div><div class="v"><span class="zh">不用袋子</span><span class="s">부용 따이쯔</span></div></div>
+        <div class="row"><div>먹고 갈게요 / 포장이요</div><div class="v"><span class="zh">內用 / 外帶</span><span class="s">네이용 / 와이따이</span></div></div>
+        <div class="row"><div>병원에 가고 싶어요</div><div class="v"><span class="zh">我要去醫院</span><span class="s">워 야오 취 이위엔</span></div></div>
+        <div class="row"><div>저는 한국 사람이에요</div><div class="v"><span class="zh">我是韓國人</span><span class="s">워 스 한궈런</span></div></div>
+        <div class="row"><div>감사합니다</div><div class="v"><span class="zh">謝謝</span><span class="s">씨에씨에</span></div></div>
+      </div>
+    </details>
+
+    <details class="sec" id="s10" data-k="태풍 지진 재난 안전 대피">
+      <summary><span class="num">11</span><span class="ttl">태풍 · 지진 대비<em>防災</em></span></summary>
+      <div class="body">
+        <ul>
+          <li>태풍 때 지자체가 휴무·휴교(停班停課)를 발표합니다. 전날 저녁 공지를 확인하세요.</li>
+          <li>지진·재난 경보는 휴대폰 문자로 자동 수신됩니다.</li>
+          <li>물, 손전등, 보조배터리, 상비약을 준비해 두세요.</li>
+        </ul>
+        <div class="actions"><a href="https://www.cwa.gov.tw/" target="_blank" rel="noopener">중앙기상서 ↗</a></div>
+      </div>
+    </details>
+
+    <p class="empty" id="empty" hidden>검색 결과가 없습니다</p>
+  </main>
+
+  <footer>
+    <div class="sign">삶 · 숨 · 쉼 · 샘</div>
+    <a href="https://blog.naver.com/sungd1018" target="_blank" rel="noopener">peacemaker</a> 가 만들었습니다<br>
+    정보 기준 2026년 11월 · 중요한 일은 공식 기관에서 꼭 다시 확인하세요
+  </footer>
+</div>
+
+<script>
+  const q = document.getElementById("q"), secs = [...document.querySelectorAll(".sec")], empty = document.getElementById("empty");
+  q.addEventListener("input", () => {
+    const s = q.value.trim().toLowerCase(); let n = 0;
+    secs.forEach(c => {
+      const hit = !s || (c.dataset.k + " " + c.textContent).toLowerCase().includes(s);
+      c.hidden = !hit; if (hit) n++;
+      if (s) c.open = hit;
+    });
+    empty.hidden = n > 0;
+  });
+  document.querySelectorAll(".chips a").forEach(a => a.addEventListener("click", () => {
+    const t = document.querySelector(a.getAttribute("href")); if (t) t.open = true;
+  }));
+</script>
+</body>
+</html>

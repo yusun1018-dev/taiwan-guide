@@ -572,7 +572,7 @@ footer a{color:var(--ink)}
       </div>
     </details>
 
-    <details class="sec" id="s4" data-k="병원 의료 건강보험 건보 약국 진료 아플때 응급실 치과">
+    <details class="sec" id="s4" data-k="병원 의료 건강보험 건보 건보카드 健保卡 보험카드 신청 약국 진료 아플때 응급실 치과">
       <summary><span class="num">04</span><span class="ttl">병원 · 건강보험<em>全民健保</em></span></summary>
       <div class="body">
         <h3>건강보험</h3>
@@ -588,10 +588,24 @@ footer a{color:var(--ink)}
           <li>야간·휴일 응급은 급진(急診), 약국은 藥局.</li>
         </ul>
         <div class="actions"><a href="https://www.nhi.gov.tw/" target="_blank" rel="noopener">건강보험서 ↗</a></div>
+        <h3>직접 신청해 보니 — 신주에서</h3>
+        <ul>
+          <li>대만 입국 후 <b>6개월</b>이 지나야 신청할 수 있습니다. 그 사이 출국한 날이 있으면 그만큼 늦어집니다(5일 다녀오니 6개월+5일).</li>
+          <li><b>증명사진과 ARC</b>를 챙겨 가세요. 신청서에 사진을 풀로 붙여 냅니다.</li>
+          <li>신주는 <b>신주국군병원 안 건강보험서 신주 연락사무소</b>(新竹聯絡辦公室)에서 신청했습니다. 정문으로 들어가 오른쪽 창구에서 번호표를 받습니다.</li>
+          <li>카드는 <b>2주 안에</b> 집으로 왔습니다. 진료 때 카드를 내면 보통 진료비 200~250NT 정도였습니다.</li>
+          <li>6개월이 지나고도 늦게 신청하면 보험료를 <b>소급해서 한꺼번에</b> 낸다고 합니다 — 6개월이 지나면 바로 신청하세요.</li>
+        </ul>
+        <div class="note">개인 경험(2024년 12월 신청) 기준입니다. 자격·서류는 건강보험서에 꼭 확인하세요.</div>
+        <a class="story" href="https://blog.naver.com/sungd1018/223727529535" target="_blank" rel="noopener">
+          <small>peacemaker의 대만살이 노트 ↗</small>
+          <strong>대만에서 꼭 필요한 카드 — 대만건강보험카드</strong>
+          <span>신주에서 건강보험카드를 처음 신청한 과정과 병원 이용 후기 — 블로그에서 자세히 보기</span>
+        </a>
       </div>
     </details>
 
-    <details class="sec" id="s5" data-k="교통 지하철 MRT 버스 이지카드 고속철도 택시 기차 유바이크 자전거">
+    <details class="sec" id="s5" data-k="교통 지하철 MRT 버스 이지카드 교통카드 悠遊卡 easycard 고속철도 택시 기차 유바이크 자전거">
       <summary><span class="num">05</span><span class="ttl">교통<em>交通</em></span></summary>
       <div class="body">
         <ul>
@@ -603,6 +617,18 @@ footer a{color:var(--ink)}
         </ul>
         <div class="row"><div>택시 호출<span class="s">台灣大車隊</span></div><div class="v"><a href="tel:55688">55688</a></div></div>
         <div class="row"><div>관광 안내<span class="s">觀光諮詢熱線</span></div><div class="v"><a href="tel:0800011765">0800-011-765</a></div></div>
+        <h3>직접 사 보니 — 이지카드(悠遊卡)</h3>
+        <ul>
+          <li>‘easy card’보다 <b>悠遊卡</b>라고 말하면 다 알아듣습니다.</li>
+          <li>세븐일레븐 등 편의점 <b>계산대 앞</b>에 여러 그림의 카드가 진열돼 있고, 고른 뒤 직원에게 말하면 잠금을 풀어 꺼내 줍니다.</li>
+          <li>카드값 <b>120NT</b>(2024년 10월, 세븐일레븐). 충전은 원하는 만큼 편의점에서 합니다.</li>
+          <li>만 12세 미만·65세 이상 우대카드와 학생카드는 일반 편의점에서는 구하기 어려웠습니다.</li>
+        </ul>
+        <a class="story" href="https://blog.naver.com/sungd1018/223610284561" target="_blank" rel="noopener">
+          <small>peacemaker의 대만살이 노트 ↗</small>
+          <strong>대만 교통카드 — easy card(悠遊卡) 구입하기</strong>
+          <span>대만에 온 다음 날 만든 첫 카드 이야기 — 블로그에서 자세히 보기</span>
+        </a>
       </div>
     </details>
 
@@ -1170,7 +1196,9 @@ drawVisits(); addEventListener("resize",()=>{const w=document.getElementById("ch
   // I 삶 — 생활 글
   document.getElementById("bibleNotes").innerHTML=life.filter(x=>isBible(x)&&!x.cat.includes("워드painting")).map(x=>
     `<a href="${x.url}" target="_blank" rel="noopener">${img(x)}<small>${md(x.date)}</small><b>${esc(x.head)}</b><span>${esc(x.tail||x.quote)}</span></a>`).join("");
-  document.getElementById("lifeNotes").innerHTML=life.filter(x=>!isTrip(x)&&!isBible(x)).map(x=>
+  const FIRST=["223727529535","223610284561"]; // 건강보험카드 · 교통카드 — 나란히 맨 앞에 (오너 지시)
+  const rank=x=>{const i=FIRST.indexOf(x.id);return i<0?99:i;};
+  document.getElementById("lifeNotes").innerHTML=life.filter(x=>!isTrip(x)&&!isBible(x)).sort((a,b)=>rank(a)-rank(b)).map(x=>
     `<a href="${x.url}" target="_blank" rel="noopener">${img(x)}<small>${md(x.date)}</small><b>${esc(x.head)}</b><span>${esc(x.quote)}</span></a>`).join("");
 
   // III 쉼 — 여행 노트

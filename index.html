@@ -439,6 +439,34 @@ body[data-tone="dark"] .dots{color:#f4f2ec}
 .guide .say:focus-visible,.guide .sayall:focus-visible{outline:2px solid var(--jade);outline-offset:2px}
 .guide .phr.nosound .say,.guide .phr.nosound .sayall{opacity:.35;pointer-events:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .guide .pl .ppy,:root:not([data-theme="light"]) .guide .pl .who,:root:not([data-theme="light"]) .guide .say,:root:not([data-theme="light"]) .guide .sayall{color:var(--jade-g)}}
+/* ── 사부작사부작: 나눔 간식 ── */
+.sabugrid{max-width:1100px;margin:0 auto 100px;padding:0 16px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px) clamp(20px,4vw,48px)}
+.sabugrid .rcp:nth-child(even){margin-top:clamp(0px,9vw,120px)}
+.rcp .ph{position:relative;margin-bottom:22px}
+.rcp .ph img:first-child{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;box-shadow:0 30px 70px rgba(0,0,0,.3)}
+.rcp .ph img.in{position:absolute;right:-12px;bottom:-22px;width:42%;height:auto;aspect-ratio:1;object-fit:cover;border:6px solid var(--paper);box-shadow:0 14px 30px rgba(0,0,0,.3);transform:rotate(3deg)}
+.rcp:nth-child(even) .ph img.in{right:auto;left:-12px;transform:rotate(-3deg)}
+.rcp small{font-size:.66rem;letter-spacing:.24em;opacity:.75}
+.rcp h4{margin:6px 0 10px;font-family:"Noto Serif KR",serif;font-weight:300;font-size:clamp(1.7rem,4.4vw,2.6rem);letter-spacing:-.03em;line-height:1.15}
+.rcp .q{margin:0;font-family:"Noto Serif KR",serif;font-weight:300;font-size:1.02rem;line-height:1.65;opacity:.92}
+.rcp .tw{margin:14px 0 0;font-size:.85rem;line-height:1.6;padding:10px 12px;border:1px solid rgba(244,242,236,.3);border-radius:6px}
+.rcp .tw b{font-size:.72rem;letter-spacing:.12em;margin-right:6px}
+.rcp details{margin-top:12px;border-top:1px solid rgba(244,242,236,.25);padding-top:10px}
+.rcp summary{cursor:pointer;font-size:.82rem;letter-spacing:.08em;list-style:none;display:flex;align-items:center;gap:8px}
+.rcp summary::-webkit-details-marker{display:none}
+.rcp summary::before{content:"+";display:inline-grid;place-items:center;width:20px;height:20px;border:1px solid currentColor;border-radius:50%;font-size:.8rem}
+.rcp details[open] summary::before{content:"−"}
+.rcp .ing{margin:10px 0 6px;font-size:.84rem;line-height:1.7;opacity:.9}
+.rcp ol{margin:6px 0 0;padding-left:1.3em;font-size:.86rem;line-height:1.65}
+.rcp ol li{margin:3px 0}
+.rcp .rd{display:inline-block;margin-top:12px;font-size:.78rem;letter-spacing:.14em}
+@media (max-width:640px){
+  .sabugrid{grid-template-columns:1fr}
+  .sabugrid .rcp:nth-child(even){margin-top:0}
+  .rcp .ph img.in{width:38%;right:-4px}
+  .rcp:nth-child(even) .ph img.in{left:-4px}
+}
+
 footer{position:relative;text-align:center;padding:90px 16px calc(110px + env(safe-area-inset-bottom,0px));color:var(--faint);font-size:.8rem;line-height:1.9;overflow:hidden}
 footer .sign{font-family:"Noto Serif KR",serif;font-size:clamp(1.6rem,7vw,3rem);color:var(--ink);letter-spacing:.3em;font-weight:300;margin-bottom:10px}
 footer a{color:var(--ink)}
@@ -948,6 +976,73 @@ footer a{color:var(--ink)}
     <figure class="c-c rv" data-par=".04"><img src="img/zoo-flamingo.jpg" alt="연못가의 홍학 무리" loading="lazy" width="1400" height="1050"></figure>
     <figure class="c-d rv" data-par="-.05"><img src="img/zoo-koala.jpg" alt="나무 위에서 잠든 코알라" loading="lazy" width="1400" height="1050"></figure>
     <figure class="c-e rv" data-par=".09"><img src="img/zoo-alpacas.jpg" alt="나무 그늘 아래 알파카들" loading="lazy" width="1400" height="1050"></figure>
+  </div>
+  <!-- 사부작사부작 in 대만 — 예배 후 나눔 간식 4편 (블로그 원문에서 재료·과정을 옮김) -->
+  <div class="sabu" id="sabu">
+    <div class="line"><p class="rv">예배가 끝나면,<br>누군가 집에서 만든 간식을<br>꺼내 놓습니다.</p></div>
+    <div class="fact rv"><div class="n">4:30</div><div class="cap">After Sunday Service · Sharing Time</div><div class="ko">신죽한국교회 예배 후 ‘간식 나눔 + 삶 나눔’ — 저녁엔 이르고 출출한 시간</div></div>
+    <div class="sechead rv" style="padding-top:0"><div class="label">peacemaker · 사부작사부작 in 대만</div><h3>대만 부엌에서 만든<br>나눔의 맛</h3></div>
+
+    <div class="sabugrid">
+      <article class="rcp rv">
+        <div class="ph"><img src="img/sabu/ricecake-main.jpg" alt="쟁반 가득 담긴 바람떡" loading="lazy" width="825" height="1100"><img class="in" src="img/sabu/ricecake-sub.jpg" alt="참기름을 바른 바람떡" loading="lazy" width="600" height="400"></div>
+        <div class="tx">
+          <small>01 · 2025.5.25</small>
+          <h4>바람떡</h4>
+          <p class="q">“주일 예배 후 성도들과 나눈 바람떡. 바람처럼 사라졌지만, 한 번 만들어 보니 또 만들고 싶어진다.”</p>
+          <p class="tw"><b>대만에서 구하기</b> 습식 멥쌀가루 — 여선교회에서 가래떡을 단체 주문할 때 1.2kg 180NT에 함께 샀어요.</p>
+          <details><summary>재료 · 만드는 법</summary>
+            <p class="ing">습식 멥쌀가루 1.2kg · 소금 12g · 식용유 20g · 물 약 240g · 팥앙금 800g · 설탕·참기름 약간</p>
+            <ol><li>냉동 쌀가루는 하루 전 냉장실에서 해동</li><li>쌀가루에 무게의 1% 소금을 섞기</li><li>물주기 — 손바닥으로 비비며 소보로처럼 몽글해질 때까지</li><li>설탕 뿌린 찜기에 나누어 담아 끓는 물솥에서 20분</li><li>식용유 바른 반죽기로 반질반질해질 때까지 치대기</li><li>탁구공 크기로 떼어 4mm로 밀고, 앙금(12~15g)을 넣어 바람떡 틀로 찍은 뒤 참기름</li></ol>
+          </details>
+          <a class="rd" href="https://blog.naver.com/sungd1018/223878729997" target="_blank" rel="noopener">블로그에서 보기 ↗</a>
+        </div>
+      </article>
+
+      <article class="rcp rv">
+        <div class="ph"><img src="img/sabu/potato-main.jpg" alt="감자샐러드를 넣은 버터빵을 든 손" loading="lazy" width="900" height="710"><img class="in" src="img/sabu/potato-sub.jpg" alt="쟁반 가득한 감자샐러드빵" loading="lazy" width="600" height="418"></div>
+        <div class="tx">
+          <small>02 · 2025.1.27</small>
+          <h4>감자샐러드 버터빵</h4>
+          <p class="q">“샐러드빵이 먹고 싶어 코스트코에서 버터빵·감자·소시지를 샀는데, 우리 가족끼리 먹기엔 좀… 그래서 교회 간식으로.”</p>
+          <p class="tw"><b>분량</b> 샐러드빵 50개를 넉넉히 채우는 양 · 재료는 코스트코 신주점</p>
+          <details><summary>재료 · 만드는 법</summary>
+            <p class="ing">감자(주먹만 한 것) 8개 · 달걀 12개 · 소시지 600g · 마요네즈 10T · 설탕 5T · 식초 1T · 소금 약간 · 버터빵</p>
+            <ol><li>감자는 껍질째, 물에 소금 1T 넣고 삶기</li><li>달걀은 물에 식초 1T 넣고 삶기</li><li>소시지는 잘게 다져 팬에 볶기</li><li>감자·달걀 껍질을 벗겨 뜨거울 때 으깨기</li><li>소시지·마요네즈·소금·설탕을 넣고 섞기</li><li>반 가른 버터빵에 꽉꽉 채우기</li></ol>
+          </details>
+          <a class="rd" href="https://blog.naver.com/sungd1018/223739801994" target="_blank" rel="noopener">블로그에서 보기 ↗</a>
+        </div>
+      </article>
+
+      <article class="rcp rv">
+        <div class="ph"><img src="img/sabu/cookie-main.jpg" alt="원형으로 놓인 크리스마스 쿠키" loading="lazy" width="825" height="1100"><img class="in" src="img/sabu/cookie-sub.jpg" alt="포장한 쿠키 선물" loading="lazy" width="450" height="600"></div>
+        <div class="tx">
+          <small>03 · 2024.12.22</small>
+          <h4>크리스마스 쿠키</h4>
+          <p class="q">“작고 소박하지만 표현하고픈 사랑을 달콤한 선물에 담아 전달했다.”</p>
+          <p class="tw"><b>분량</b> 교회 가족 성탄 선물로 쿠키 100개 — 막내 학교 친구들 몫으로 한 번 더</p>
+          <details><summary>재료 · 만드는 법 (100개)</summary>
+            <p class="ing">무염버터 480g · 설탕 320g · 소금 8g · 달걀 160g · 박력분 920g · 베이킹파우더 8g</p>
+            <ol><li>버터와 달걀은 몇 시간 전 상온에 꺼내 두기</li><li>버터 → 설탕(나누어) → 달걀(나누어) 순서로 부드럽게 섞기</li><li>박력분·베이킹파우더·소금은 체에 내려 주걱으로 11자를 그리며 섞기</li><li>한 주먹씩 비닐에 담아 냉장 휴지</li><li>밀대로 밀어 모양틀로 찍고, 예열한 오븐 위·아래 185도에서 10~12분</li></ol>
+          </details>
+          <a class="rd" href="https://blog.naver.com/sungd1018/223702332851" target="_blank" rel="noopener">블로그에서 보기 ↗</a>
+        </div>
+      </article>
+
+      <article class="rcp rv">
+        <div class="ph"><img src="img/sabu/sweetpotato-main.jpg" alt="식힘판에 펼친 고구마말랭이" loading="lazy" width="825" height="1100"><img class="in" src="img/sabu/sweetpotato-sub.jpg" alt="찜기에서 찐 대만 고구마" loading="lazy" width="450" height="600"></div>
+        <div class="tx">
+          <small>04 · 2024.8.18</small>
+          <h4>대만 고구마 말랭이</h4>
+          <p class="q">“사귐이 나눔이 되고, 나눔이 삶이 되는 신죽한국교회 하늘 가족들을 사랑합니다.”</p>
+          <p class="tw"><b>대만에서 구하기</b> 대만 고구마는 크고 달아요 — 찌고, 굽고, 닭갈비에도 넣는 필수 재료.</p>
+          <details><summary>만드는 법</summary>
+            <ol><li>고구마를 반으로 잘라 찌거나 삶기 — 너무 푹 익히면 자를 때 부서져요</li><li>껍질을 벗겨 먹기 좋게 썰기</li><li>140도로 예열한 오븐에서 60분 (더 바삭하게: 180도 20분)</li><li>식힘판에 펼쳐 식히기</li></ol>
+          </details>
+          <a class="rd" href="https://blog.naver.com/sungd1018/223552172934" target="_blank" rel="noopener">블로그에서 보기 ↗</a>
+        </div>
+      </article>
+    </div>
   </div>
   <!-- 앉아서 하는 여행 — 블로그 독서 리뷰 4편 (문장은 블로그 원문에서 골라 옮김) -->
   <div class="books" id="books">

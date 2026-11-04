@@ -377,6 +377,41 @@ body[data-tone="dark"] .dots{color:#f4f2ec}
   .book .cover{width:62%}
 }
 
+/* ── 대만에 사는 한국인 (이민서 통계) ── */
+.kr .card h4.sub{margin:30px 0 6px;font-family:"Noto Serif KR",serif;font-weight:400;font-size:1.05rem}
+.kr-src{max-width:900px;margin:-50px auto 60px;padding:0 16px;color:rgba(244,242,236,.7);font-size:.74rem;line-height:1.6}
+.kr-src a{color:inherit}
+.pyr{display:grid;grid-template-columns:5.5em 1fr 1fr;gap:10px 2px;align-items:center;margin:14px 0 6px;font-size:.85rem}
+.pyr .lab{color:var(--sub);font-size:.8rem}
+.pyr .l,.pyr .r{position:relative;height:30px}
+.pyr .l i,.pyr .r i{position:absolute;top:0;bottom:0;display:block}
+.pyr .l i{right:0;background:var(--c1);border-radius:4px 0 0 4px}
+.pyr .r i{left:0;background:var(--c2);border-radius:0 4px 4px 0}
+.pyr .l span,.pyr .r span{position:absolute;top:50%;transform:translateY(-50%);font-size:.8rem;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+.pyr .l span{right:calc(var(--w) + 6px)}
+.pyr .r span{left:calc(var(--w) + 6px)}
+.pyr .in.l span{right:8px;color:#fff}
+.pyr .in.r span{left:8px;color:#fff}
+.dots1000{display:grid;grid-template-columns:repeat(50,1fr);gap:3px;margin:18px 0 8px}
+.dots1000 i{aspect-ratio:1;border-radius:50%;background:var(--grid)}
+.dots1000 i.k{background:var(--c2);box-shadow:0 0 0 2px var(--paper),0 0 0 3px var(--c2)}
+.dots1000 i.h{background:linear-gradient(90deg,var(--c2) 50%,var(--grid) 50%);box-shadow:0 0 0 2px var(--paper),0 0 0 3px var(--c2)}
+@media (max-width:560px){.dots1000{grid-template-columns:repeat(40,1fr);gap:1.5px}}
+.krfacts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px}
+.krfacts div{background:var(--paper);padding:16px 12px}
+.krfacts b{display:block;font-family:"Cormorant Garamond",serif;font-size:2.4rem;font-weight:500;line-height:1}
+.krfacts b small{font-size:.45em;margin-left:2px}
+.krfacts span{display:block;margin-top:6px;font-size:.78rem;color:var(--sub);line-height:1.5}
+@media (max-width:640px){.krfacts{grid-template-columns:1fr}}
+
+.krsrc{max-width:900px;margin:-40px auto 70px;padding:22px 20px;border-top:1px solid rgba(244,242,236,.3);border-bottom:1px solid rgba(244,242,236,.3);color:rgba(244,242,236,.85);font-size:.8rem;line-height:1.7}
+.krsrc .label{margin-bottom:8px;opacity:.8}
+.krsrc p{margin:0 0 10px}
+.krsrc ul{list-style:none;margin:0 0 12px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:4px 16px}
+.krsrc li a{color:inherit;text-decoration:none;border-bottom:1px dotted rgba(244,242,236,.5)}
+.krsrc li span{opacity:.65;font-size:.72rem}
+.krsrc a{color:inherit}
+.kr .card .src b{color:var(--ink);font-weight:600}
 footer{position:relative;text-align:center;padding:90px 16px calc(110px + env(safe-area-inset-bottom,0px));color:var(--faint);font-size:.8rem;line-height:1.9;overflow:hidden}
 footer .sign{font-family:"Noto Serif KR",serif;font-size:clamp(1.6rem,7vw,3rem);color:var(--ink);letter-spacing:.3em;font-weight:300;margin-bottom:10px}
 footer a{color:var(--ink)}
@@ -661,7 +696,7 @@ footer a{color:var(--ink)}
     <div><div class="n">2,341<small style="font-size:.4em">만</small></div><div class="k">인구 (2024.11)</div></div>
     <div><div class="n">47</div><div class="k">쓰이는 언어</div></div>
     <div><div class="n">2/3</div><div class="k">산악 지형</div></div>
-    <div><div class="n">4,879</div><div class="k">한국 교민 (2025.4)</div></div>
+    <div><div class="n">5,140</div><div class="k">대만 거주 한국인 (2026.9)</div></div>
   </div>
   <div class="blogsec" data-blog hidden>
     <div class="line" style="min-height:60svh"><p class="rv">이 섬이 내쉬는 숨,<br><em>fleurs</em> 꽃.</p></div>
@@ -687,6 +722,70 @@ footer a{color:var(--ink)}
       <div class="chart" id="chartVisits"></div>
       <details class="viewtab"><summary>표로 보기</summary><table id="tabVisits"></table></details>
       <p class="src">출처: 한국관광공사·대만관광국 (자료: 「대만 알아보기」) · 2020년은 만 명 단위 근삿값 · 2024년은 1–10월</p>
+    </div>
+  </div>
+  <!-- 대만에 사는 한국인 — 內政部移民署「外僑居留人數統計表」(2016–2025 각 12월 말, 2026.9 말) -->
+  <div class="kr" id="koreans">
+    <div class="line"><p class="rv">그리고 지금 이 섬에서,<br>한국인 오천여 명이<br>함께 숨 쉬고 있습니다.</p></div>
+    <div class="fact rv"><div class="n">5,140</div><div class="cap">Koreans residing in Taiwan · Sept. 2026</div><div class="ko">대만 내정부 이민서 공식 통계 · 거류증을 가지고 대만에 실제로 머무는 한국인</div></div>
+
+    <div class="wrapc">
+      <div class="card wide rv">
+        <h3 class="ct">10년 동안, 조금씩 늘었습니다</h3>
+        <p class="cs">2016년 4,053명에서 2020년 5,029명까지 늘었고, 코로나 뒤 4,700–4,800명대를 지나 2026년 9월 5,140명 — 10년 사이 가장 많습니다.</p>
+        <div class="chart" id="krTrend"></div>
+        <details class="viewtab"><summary>표로 보기</summary><table id="krTrendT"></table></details>
+        <p class="src">각 해 12월 말 기준(2026년은 9월 말) · 단위: 명<br><b>출처</b> 대만 내정부 이민서 「外僑居留人數統計表」 — 표 「目前在臺(按國籍及區域)」 韓國 합계, 각 연도판</p>
+      </div>
+    </div>
+
+    <div class="line"><p class="rv">신주에는<br>사백여 명이 삽니다.</p></div>
+    <div class="wrapc">
+      <div class="card wide rv">
+        <h3 class="ct">신주시 · 신주현(주베이)의 한국인</h3>
+        <p class="cs">2026년 9월 말 신주시 190명, 신주현 222명 — 모두 412명. 10년 전엔 신주시가 더 많았는데, 2024년부터 주베이가 속한 신주현이 앞섰습니다.</p>
+        <div class="legend"><span><i style="background:var(--c1)"></i>신주시 新竹市</span><span><i style="background:var(--c2)"></i>신주현 新竹縣 (주베이 竹北 포함)</span></div>
+        <div class="chart" id="krHsinchu"></div>
+        <details class="viewtab"><summary>표로 보기</summary><table id="krHsinchuT"></table></details>
+        <p class="src"><b>출처</b> 대만 내정부 이민서 「外僑居留人數統計表」 — 표 「目前在臺(按國籍及區域)」 韓國 · 新竹市 / 新竹縣, 각 연도판<br>이민서 통계는 현·시 단위까지만 공개합니다. 주베이(竹北市)만 따로 집계한 공식 수치는 없어, 주베이가 속한 신주현 전체 수치를 보여 줍니다.</p>
+      </div>
+    </div>
+
+    <div class="line"><p class="rv">남자 2,592명,<br>여자 2,548명.<br>아이들은 464명.</p></div>
+    <div class="wrapc">
+      <div class="card wide rv">
+        <h3 class="ct">성별과 나이</h3>
+        <p class="cs">남녀가 거의 같고, 열 명 중 한 명(9%)이 15세 미만 어린이입니다.</p>
+        <div class="legend"><span><i style="background:var(--c1)"></i>남자</span><span><i style="background:var(--c2)"></i>여자</span></div>
+        <div class="pyr" id="krPyr"></div>
+        <p class="src"><b>출처</b> 대만 내정부 이민서 「外僑居留人數統計表」 115년(2026) 9월판 — 표 「目前在臺(按國籍及區域)」(성별), 「目前在臺(按國籍及職業)」(15세 미만 아동)<br>이민서 공식 통계는 나이를 <b>15세 미만 / 15세 이상</b>으로만 나눕니다. 그보다 자세한 국적별 연령 통계는 공개되어 있지 않습니다.</p>
+        <h4 class="sub">15세 이상, 무엇을 하며 사나</h4>
+        <div class="chart" id="krOcc"></div>
+        <details class="viewtab"><summary>표로 보기</summary><table id="krOccT"></table></details>
+        <p class="src"><b>출처</b> 대만 내정부 이민서 「外僑居留人數統計表」 115년(2026) 9월판 — 표 「目前在臺(按國籍及職業)」 韓國<br>이민서의 직업 분류 기준 · ‘기타 취업’은 위 항목에 들지 않는 직업 전체</p>
+      </div>
+    </div>
+
+    <div class="line"><p class="rv">외국인 천 명 가운데<br>한국인은 네다섯 명.</p></div>
+    <div class="wrapc">
+      <div class="card wide rv">
+        <h3 class="ct">대만의 외국인 가운데 한국인</h3>
+        <p class="cs">대만에 머무는 외국인 1,134,483명 중 한국인은 5,140명, <b>0.45%</b>입니다. 점 하나가 외국인 한 명입니다.</p>
+        <div class="dots1000" id="krDots" role="img" aria-label="외국인 1,000명 가운데 한국인 약 4.5명을 표시한 점 그림"></div>
+        <div class="krfacts">
+          <div><b>9<small>위</small></b><span>국적별 순위 — 인도네시아·베트남·필리핀·태국·말레이시아·일본·미국·인도 다음</span></div>
+          <div><b>1.6<small>%</small></b><span>이주노동자(81만 6천여 명)를 빼면 외국인 중 한국인 비율</span></div>
+          <div><b>15<small>%</small></b><span>대만의 외국인 선교사 1,897명 가운데 한국인 286명</span></div>
+        </div>
+        <p class="src"><b>출처</b> 대만 내정부 이민서 「外僑居留人數統計表」 115년(2026) 9월판 — 외국인 전체·국적별 순위: 표 「目前在臺(按國籍及區域)」 / 이주노동자·선교사 전체: 표 「目前在臺(按職業及區域)」 · 비율과 순위는 표의 수치로 계산<br>외국인 중 한국인 비율은 10년 전 0.60%(2016)에서 0.45%(2026.9)로 — 한국인이 줄어서가 아니라 이주노동자를 중심으로 외국인 전체가 1.7배 늘었기 때문입니다.</p>
+      </div>
+    </div>
+    <div class="krsrc rv">
+      <div class="label">출처 · Source</div>
+      <p><b>대만 내정부 이민서</b>(內政部移民署, National Immigration Agency) 「<b>外僑居留人數統計表</b>」(외국인 거류 인원 통계표) — 매월 공개되는 공식 통계입니다. 집계 대상은 유효한 외국인 거류증을 가지고 대만에 실제로 머무는 외국인이며, 외교·예우 비자 소지자와 거류증을 아직 받지 않은 사람은 빠집니다(통계표 주석).</p>
+      <p>각 연도 12월 말(2026년은 9월 말) 판을 내려받아 「韓國」 항목을 옮겼습니다. 원본 파일:</p>
+      <ul><li><a href="https://www.immigration.gov.tw/media/16277/%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88%E8%A1%A810512.xls" target="_blank" rel="noopener">2016.12 <span>(105년 12월판 · xls)</span> ↓</a></li><li><a href="https://www.immigration.gov.tw/media/16254/%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88%E8%A1%A810612.xls" target="_blank" rel="noopener">2017.12 <span>(106년 12월판 · xls)</span> ↓</a></li><li><a href="https://www.immigration.gov.tw/media/41064/7-1-10712-%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88%E8%A1%A8.xlsx" target="_blank" rel="noopener">2018.12 <span>(107년 12월판 · xlsx)</span> ↓</a></li><li><a href="https://www.immigration.gov.tw/media/75933/%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88%E8%A1%A8108012.xlsx" target="_blank" rel="noopener">2019.12 <span>(108년 12월판 · xlsx)</span> ↓</a></li><li><a href="https://www.immigration.gov.tw/media/75961/%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88%E8%A1%A810912.xlsx" target="_blank" rel="noopener">2020.12 <span>(109년 12월판 · xlsx)</span> ↓</a></li><li><a href="https://www.immigration.gov.tw/media/75990/%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88%E8%A1%A811012.xls" target="_blank" rel="noopener">2021.12 <span>(110년 12월판 · xls)</span> ↓</a></li><li><a href="https://www.immigration.gov.tw/media/89697/%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88%E8%A1%A811112.xls" target="_blank" rel="noopener">2022.12 <span>(111년 12월판 · xls)</span> ↓</a></li><li><a href="https://www.immigration.gov.tw/media/101733/%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88%E8%A1%A811212.xls" target="_blank" rel="noopener">2023.12 <span>(112년 12월판 · xls)</span> ↓</a></li><li><a href="https://www.immigration.gov.tw/media/110078/%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88%E8%A1%A811312.xls" target="_blank" rel="noopener">2024.12 <span>(113년 12월판 · xls)</span> ↓</a></li><li><a href="https://www.immigration.gov.tw/media/117190/%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88%E8%A1%A811412.xls" target="_blank" rel="noopener">2025.12 <span>(114년 12월판 · xls)</span> ↓</a></li><li><a href="https://www.immigration.gov.tw/media/122331/%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99%E4%BA%BA%E6%95%B8%E7%B5%B1%E8%A8%88%E8%A1%A811509.xls" target="_blank" rel="noopener">2026.9 <span>(115년 9월판 · xls)</span> ↓</a></li></ul>
+      <p><a href="https://www.immigration.gov.tw/5382/5385/7344/7350/%E5%A4%96%E5%83%91%E5%B1%85%E7%95%99/" target="_blank" rel="noopener">이민서 통계 페이지 — 업무통계 › 통계자료 › 외국인 거류(外僑居留) ↗</a> · 자료 확인일 2026년 11월 4일</p>
     </div>
   </div>
   <div class="line"><p class="rv">사백 년,<br>네 번 주인이 바뀐 섬.</p></div>
@@ -1125,6 +1224,67 @@ drawVisits(); addEventListener("resize",()=>{const w=document.getElementById("ch
       if(e.key==="ArrowRight"&&i<S.length-1){pick(i+1);st.children[i+1].focus();}
       if(e.key==="ArrowLeft"&&i>0){pick(i-1);st.children[i-1].focus();} }); });
   pick(0);
+})();
+
+/* ── 대만에 사는 한국인 — 이민서 「外僑居留人數統計表」에서 추출한 값(tw-stats/korea_final.json) ── */
+(function(){
+  if(!document.getElementById("koreans")) return;
+  const S=[["2016",4053,262,166,671375],["2017",4229,251,182,717736],["2018",4382,251,190,758583],["2019",4406,268,194,785341],["2020",5029,284,245,797122],
+           ["2021",4756,227,224,752900],["2022",4871,255,243,796696],["2023",4820,229,210,851932],["2024",4776,207,225,948066],["2025",4842,196,220,1028945],["2026.9",5140,190,222,1134483]];
+  const hit=(box,els,html)=>{ const tip=tipFor(box); els.forEach((h,i)=>{ const show=()=>{const r=h.getBoundingClientRect(),br=box.getBoundingClientRect(); tip.show(html(i),Math.min(Math.max(r.left-br.left+r.width/2,70),br.width-70),r.top-br.top+20);};
+    h.addEventListener("mouseenter",show); h.addEventListener("focus",show); h.addEventListener("click",show); h.addEventListener("mouseleave",tip.hide); h.addEventListener("blur",tip.hide); }); };
+
+  // 1) 10년 추이 — 단일 계열 막대
+  function trend(){
+    const box=document.getElementById("krTrend"), W=Math.max(320,Math.min(860,box.clientWidth||860)), H=W<520?230:270, L=44, B=28, T=22, ih=H-B-T, max=6000, gw=(W-L-6)/S.length, bw=Math.min(36,gw*.6);
+    const y=v=>T+ih-(v/max)*ih; let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="대만 거주 한국인 수 연도별 막대 그래프">`;
+    for(let v=0;v<=max;v+=2000) s+=`<line class="gl" x1="${L}" x2="${W-4}" y1="${y(v)}" y2="${y(v)}"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end">${v.toLocaleString()}</text>`;
+    S.forEach((d,i)=>{ const cx=L+gw*i+gw/2, x=cx-bw/2, h=ih*d[1]/max, yy=T+ih-h, r=4;
+      s+=`<path d="M${x},${T+ih} V${yy+r} Q${x},${yy} ${x+r},${yy} H${x+bw-r} Q${x+bw},${yy} ${x+bw},${yy+r} V${T+ih} Z" style="fill:var(--c1)" opacity="${i===S.length-1?1:.72}"/>`;
+      if(W>=520||i%2===0||i===S.length-1) s+=`<text x="${cx}" y="${H-8}" text-anchor="middle">${W<520?d[0].replace("20","’"):d[0]}</text>`;
+      if(i===0||i===4||i===S.length-1) s+=`<text x="${cx}" y="${yy-6}" text-anchor="middle" style="fill:var(--ink);font-weight:600">${d[1].toLocaleString()}</text>`;
+      s+=`<rect class="hit" x="${cx-gw/2}" y="${T}" width="${gw}" height="${ih}" tabindex="0" aria-label="${d[0]} ${d[1]}명"/>`; });
+    box.innerHTML=s+"</svg>";
+    hit(box,[...box.querySelectorAll(".hit")],i=>`<b>${S[i][0]}</b><br>${S[i][1].toLocaleString()}명`);
+  }
+  // 2) 신주시·신주현 — 두 계열 선
+  function hsinchu(){
+    const box=document.getElementById("krHsinchu"), W=Math.max(320,Math.min(860,box.clientWidth||860)), H=W<520?220:250, L=36, R=W<520?40:70, B=28, T=16, ih=H-B-T, max=300, n=S.length;
+    const x=i=>L+i*(W-L-R)/(n-1), y=v=>T+ih-(v/max)*ih;
+    let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="신주시와 신주현 한국인 수 추이 선 그래프">`;
+    for(let v=0;v<=max;v+=100) s+=`<line class="gl" x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end">${v}</text>`;
+    S.forEach((d,i)=>{ if(W>=520||i%2===0||i===n-1) s+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle">${W<520?d[0].replace("20","’"):d[0]}</text>`; });
+    [[2,"var(--c1)","신주시"],[3,"var(--c2)","신주현"]].forEach(([k,c,nm])=>{
+      s+=`<polyline fill="none" style="stroke:${c}" stroke-width="2" stroke-linejoin="round" points="${S.map((d,i)=>x(i)+","+y(d[k])).join(" ")}"/>`;
+      S.forEach((d,i)=>{ s+=`<circle cx="${x(i)}" cy="${y(d[k])}" r="${i===n-1?5:3.5}" style="fill:${c};stroke:var(--paper)" stroke-width="2"/>`; });
+      const last=S[n-1][k]; s+=`<text x="${x(n-1)+9}" y="${y(last)+(k===2?12:-4)}" style="fill:var(--ink);font-weight:600">${W<520?last:nm+" "+last}</text>`; });
+    S.forEach((d,i)=>{ const w=(W-L-R)/(n-1); s+=`<line class="cx" x1="${x(i)}" x2="${x(i)}" y1="${T}" y2="${T+ih}" style="stroke:var(--sub)" stroke-dasharray="2 3" opacity="0"/><rect class="hit" x="${x(i)-w/2}" y="${T}" width="${w}" height="${ih}" tabindex="0" aria-label="${d[0]} 신주시 ${d[2]}명, 신주현 ${d[3]}명"/>`; });
+    box.innerHTML=s+"</svg>";
+    const cx=[...box.querySelectorAll(".cx")], hs=[...box.querySelectorAll(".hit")];
+    hs.forEach((h,i)=>{ h.addEventListener("mouseenter",()=>cx[i].setAttribute("opacity",1)); h.addEventListener("mouseleave",()=>cx[i].setAttribute("opacity",0)); });
+    hit(box,hs,i=>`<b>${S[i][0]}</b><br>신주시 ${S[i][2]} · 신주현 ${S[i][3]}<br>합계 ${S[i][2]+S[i][3]}명`);
+  }
+  // 3) 성별·연령 — 좌우 막대
+  (function(){
+    const P=[["15세 이상",2368,2308],["15세 미만",224,240]], mx=2400;
+    document.getElementById("krPyr").innerHTML=`<div></div><div class="lab" style="text-align:right">남자 2,592</div><div class="lab">여자 2,548</div>`+
+      P.map(p=>`<div class="lab">${p[0]}</div><div class="l${p[1]/mx>.4?" in":""}" style="--w:${(p[1]/mx*100).toFixed(1)}%"><i style="width:${(p[1]/mx*100).toFixed(1)}%"></i><span>${p[1].toLocaleString()}</span></div><div class="r${p[2]/mx>.4?" in":""}" style="--w:${(p[2]/mx*100).toFixed(1)}%"><i style="width:${(p[2]/mx*100).toFixed(1)}%"></i><span>${p[2].toLocaleString()}</span></div>`).join("");
+  })();
+  // 4) 직업 — 단일 계열 가로 막대(크기순)
+  const O=[["기타 취업",1819],["가사",609],["학생",602],["상업",494],["엔지니어",379],["선교사",286],["실업",213],["교사",188],["기타 무직",52],["의사·기능공 등",34]];
+  (function(){
+    const box=document.getElementById("krOcc"), mx=O[0][1];
+    box.innerHTML=O.map(o=>`<div style="display:grid;grid-template-columns:8.5em 1fr 3.2em;gap:10px;align-items:center;margin:6px 0;font-size:.85rem"><span>${o[0]}</span><div style="height:12px;background:var(--grid);border-radius:0 4px 4px 0"><div style="height:100%;width:${(o[1]/mx*100).toFixed(1)}%;background:var(--c1);border-radius:0 4px 4px 0"></div></div><b style="text-align:right;font-variant-numeric:tabular-nums">${o[1].toLocaleString()}</b></div>`).join("");
+    document.getElementById("krOccT").innerHTML="<tr><th>경제 활동</th><th>명</th></tr>"+O.map(o=>`<tr><td>${o[0]}</td><td>${o[1].toLocaleString()}</td></tr>`).join("")+"<tr><td>합계(15세 이상)</td><td>4,676</td></tr>";
+  })();
+  // 5) 천 명 중 4.5명
+  (function(){ let s=""; for(let i=0;i<1000;i++) s+=`<i class="${i<4?"k":i===4?"h":""}"></i>`; document.getElementById("krDots").innerHTML=s; })();
+  // 표
+  document.getElementById("krTrendT").innerHTML="<tr><th>연도</th><th>한국인</th><th>외국인 전체</th><th>비율</th></tr>"+S.map(d=>`<tr><td>${d[0]}</td><td>${d[1].toLocaleString()}</td><td>${d[4].toLocaleString()}</td><td>${(d[1]/d[4]*100).toFixed(2)}%</td></tr>`).join("");
+  document.getElementById("krHsinchuT").innerHTML="<tr><th>연도</th><th>신주시</th><th>신주현</th><th>합계</th></tr>"+S.map(d=>`<tr><td>${d[0]}</td><td>${d[2]}</td><td>${d[3]}</td><td>${d[2]+d[3]}</td></tr>`).join("");
+  trend(); hsinchu();
+  let lw=document.getElementById("krTrend").clientWidth;
+  addEventListener("resize",()=>{ const w=document.getElementById("krTrend").clientWidth; if(Math.abs(w-lw)>40){lw=w;trend();hsinchu();} });
 })();
 })();
 </script>

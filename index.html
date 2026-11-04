@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>대만생활 길잡이</title>
 <meta name="description" content="대만에 사는 한국인을 위한 길잡이 — 삶·숨·쉼·샘 네 개의 돌로 읽는 대만">
+<!-- 공유 미리보기(카카오톡·페이스북·라인 등) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="삶,숨,쉼,샘">
+<meta property="og:title" content="대만생활 길잡이 — 대만에서, 오늘을 사는 당신">
+<meta property="og:description" content="대만에 사는 한국인을 위한 길잡이 — 삶·숨·쉼·샘 네 개의 돌로 읽는 대만">
+<meta property="og:url" content="https://yusun1018-dev.github.io/taiwan-guide/">
+<meta property="og:image" content="https://yusun1018-dev.github.io/taiwan-guide/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="대만생활 길잡이 첫 화면 — 대만에서, 오늘을 사는 당신">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yusun1018-dev.github.io/taiwan-guide/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;600&display=swap">
@@ -85,7 +98,9 @@ body[data-tone="dark"] .dots{color:#f4f2ec}
 #gate .ring{width:44px;height:44px;border:1px solid currentColor;border-radius:50%;position:relative}
 #gate .ring::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid currentColor;animation:pulse 2.4s ease-out infinite}
 @keyframes pulse{from{transform:scale(1);opacity:.8}to{transform:scale(1.9);opacity:0}}
-#gate .note{position:absolute;left:0;right:0;bottom:calc(84px + env(safe-area-inset-bottom,0px));font-size:.78rem;color:var(--faint);z-index:1}
+#gate .note{margin:28px 0 0;font-size:.78rem;color:var(--faint)}
+/* 공유 미리보기 이미지 촬영용(?og) — 고정 버튼을 숨긴다 */
+body.og .sosbtn{display:none}
 
 /* ── 1. 허브: 돌을 고르세요 ── */
 #hub{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;
@@ -502,8 +517,8 @@ footer a{color:var(--ink)}
     <div class="label" style="color:var(--sub);margin-bottom:22px">TAIWAN · 臺灣生活</div>
     <h1 class="rv in">대만에서,<br><span class="lat">for</span>오늘을 사는 당신</h1>
     <div class="enter"><span class="ring"></span><span class="label">눌러서 들어가기</span></div>
+    <p class="note">긴급 전화(110 · 119)는 '삶' 챕터 맨 위에 있습니다</p>
   </div>
-  <p class="note">긴급 전화(110 · 119)는 '삶' 챕터 맨 위에 있습니다</p>
 </div>
 
 <!-- 1 ─ 허브 -->
@@ -1150,6 +1165,7 @@ document.querySelectorAll("[data-gem]").forEach(el => el.innerHTML = gemSVG(el.d
 
 /* ── 게이트 ── */
 const gate=document.getElementById("gate");
+try{ if(new URLSearchParams(location.search).has("og")) document.body.classList.add("og"); }catch(e){}
 const skip = location.hash || sstore.get("entered");
 function enter(){ gate.classList.add("gone"); sstore.set("entered","1"); document.getElementById("hub").querySelector(".stone").focus({preventScroll:true}); }
 if(skip){ gate.classList.add("gone"); }

@@ -482,6 +482,17 @@ body.og .sosbtn{display:none}
   .rcp:nth-child(even) .ph img.in{left:-4px}
 }
 
+/* ── 화롄 이야기 ── */
+.hl-hero::after{background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(85,32,15,.8))}
+.hlroute{list-style:none;margin:18px 0 0;padding:0;position:relative}
+.hlroute::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.hlroute li{position:relative;padding:0 0 18px 28px;margin:0}
+.hlroute li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:2px solid var(--brick)}
+.hlroute li.miss::before{border-style:dashed;border-color:var(--faint)}
+.hlroute li.miss b{text-decoration:line-through;text-decoration-color:var(--faint)}
+.hlroute li.end::before{background:var(--brick)}
+.hlroute b{display:block;font-family:"Noto Serif KR",serif;font-weight:400;font-size:1.05rem}
+.hlroute span{display:block;font-size:.86rem;color:var(--sub);line-height:1.55}
 footer{position:relative;text-align:center;padding:90px 16px calc(110px + env(safe-area-inset-bottom,0px));color:var(--faint);font-size:.8rem;line-height:1.9;overflow:hidden}
 footer .sign{font-family:"Noto Serif KR",serif;font-size:clamp(1.6rem,7vw,3rem);color:var(--ink);letter-spacing:.3em;font-weight:300;margin-bottom:10px}
 footer a{color:var(--ink)}
@@ -967,10 +978,35 @@ footer a{color:var(--ink)}
       <a href="https://blog.naver.com/sungd1018/223969179940" target="_blank" rel="noopener"><img src="img/alishan/three.jpg" alt="삼대목" loading="lazy" width="900" height="1200"><small>2025.8.7</small><b>아리산 산책 2</b><span>천년의 숲속을 거닐다</span></a>
     </div>
   </div>
-  <div class="blogsec" data-blog hidden>
-    <div class="line"><p class="rv">떠나는 길에도,<br>읽고 걷습니다.</p></div>
-    <div class="sechead rv" style="padding-top:0"><div class="label">JUHA · 서서 하는 독서</div><h3>여행하며 읽다</h3></div>
-    <div class="notes" id="reads"></div>
+  <!-- 화롄 이야기 (블로그 「삶 in 대만」 2026.10.28 「대만화롄여행 – 태평양은 나를 춤추게 해」에서) -->
+  <div class="ali hl" id="hualien">
+    <div class="ali-hero hl-hero">
+      <img src="img/hualien/sea.jpg" alt="파란 하늘 아래 하얗게 부서지는 태평양 파도" loading="lazy" width="900" height="675">
+      <div class="ali-t"><div class="label">Hualien · 2026.10.21</div><h3><span class="lat">le</span>화롄<span class="zh">花蓮 · 太平洋</span></h3></div>
+    </div>
+    <div class="line"><p class="rv">태풍 소식이 들려오는데,<br>푸르른 바다가<br>너무 보고 싶었습니다.</p></div>
+    <div class="wrapc">
+      <div class="card wide rv">
+        <h3 class="ct">이란에서 하룻밤, 그리고 해안도로</h3>
+        <p class="cs">학교 끝난 아이들을 태우고 떠난 길 — 계획대로 되지 않아서 만난 비밀의 해변.</p>
+        <ol class="hlroute">
+          <li><b>이란 宜蘭</b><span>학교가 끝나고 출발, 1박</span></li>
+          <li><b>휴게소</b><span>기름을 가득 — 그리고 길을 잘못 들어 5km를 돌아서</span></li>
+          <li><b>해안도로</b><span>화롄으로, 차가 들썩이는 찬양집회</span></li>
+          <li class="miss"><b>清水斷崖</b><span>절경을 보려 했지만 주차장을 지나쳐 버림</span></li>
+          <li class="end"><b>坂下海灘 Banxia Beach</b><span>구글 지도에서 가장 가까운 해변을 찍고 무작정 — 저 멀리 놓쳤던 清水斷崖가 보였다</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="collage">
+      <div class="t rv">“비밀의 해변으로 들어가는 이 느낌.<br>아이들도 흥분을 감추지 못한다.”</div>
+      <figure class="c-a rv" data-par=".06"><img src="img/hualien/tunnel.jpg" alt="해변으로 이어지는 굴 끝에서 두 팔을 든 가족의 실루엣" loading="lazy" width="750" height="1000"></figure>
+      <figure class="c-b rv" data-par="-.08"><img src="img/hualien/beach.jpg" alt="절벽이 보이는 검은 자갈 해변에서 뛰어오르는 아이" loading="lazy" width="750" height="1000"><figcaption>해변에서 폴짝폴짝, 물끄러미 파도를 바라보고, 돌을 만지작거리며.</figcaption></figure>
+    </div>
+    <div class="line"><p class="rv">태평양이 나를 춤추게 하는 줄 알았는데,<br>아이들이 나를 춤추게 하는 줄 알았는데….</p></div>
+    <div class="notes" style="justify-content:center">
+      <a href="https://blog.naver.com/sungd1018/224456522620" target="_blank" rel="noopener"><img src="img/hualien/sea.jpg" alt="화롄 해변" loading="lazy" width="900" height="675"><small>2026.10.28</small><b>대만화롄여행</b><span>태평양은 나를 춤추게 해</span></a>
+    </div>
   </div>
   <div class="back"><a href="#hub">◦ 다른 돌 고르기</a></div>
 </section>
@@ -1313,7 +1349,7 @@ drawVisits(); addEventListener("resize",()=>{const w=document.getElementById("ch
     `<a href="${x.url}" target="_blank" rel="noopener">${img(x)}<small>${md(x.date)}</small><b>${esc(x.head)}</b><span>${esc(x.quote)}</span></a>`).join("");
 
   // III 쉼 — 여행 노트
-  document.getElementById("trips").innerHTML=life.filter(isTrip).map(x=>
+  document.getElementById("trips").innerHTML=life.filter(x=>isTrip(x)&&x.id!=="224456522620").map(x=>
     `<article class="trip rv"><div class="ph">${img(x)}</div><div class="tx"><small>${md(x.date)} · 여행 노트</small><b>${esc(x.tail||x.head)}</b><p>${esc(x.quote)}</p><a href="${x.url}" target="_blank" rel="noopener">블로그에서 읽기 ↗</a></div></article>`).join("");
 
   // II 숨 — 꽃 (한 장에 한 송이)
@@ -1357,7 +1393,6 @@ drawVisits(); addEventListener("resize",()=>{const w=document.getElementById("ch
   const mb=document.getElementById("moreSermons");
   if(sm.length<=6) mb.parentElement.hidden=true;
   mb.addEventListener("click",()=>{ ol.querySelectorAll("li[hidden]").forEach(l=>l.hidden=false); mb.parentElement.hidden=true; });
-  document.getElementById("reads").innerHTML=by("JUHA").map(x=>`<a href="${x.url}" target="_blank" rel="noopener">${img(x)}<small>${md(x.date)}</small><b>${esc(x.head)}</b><span>${esc(x.tail||x.quote)}</span></a>`).join("");
 
   // 새 요소에 리빌·시차 연결
   document.querySelectorAll(".blogsec .rv").forEach(el=>io.observe(el));

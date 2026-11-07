@@ -554,6 +554,19 @@ body.og .sosbtn{display:none}
 .ztask{margin:0 0 10px;font-size:.95rem;word-break:keep-all}
 .zcopy{all:unset;cursor:pointer;display:block;text-align:center;padding:12px 14px;border-radius:12px;border:1px solid var(--jade);color:var(--jade);font-size:.88rem}
 .zcopy small{display:block;color:var(--sub);font-size:.75rem;margin-top:2px}
+.zvoice{margin:10px 0 0;padding:10px 12px;border-radius:10px;font-size:.8rem;line-height:1.55;background:color-mix(in srgb,var(--jade) 10%,var(--paper));word-break:keep-all}
+.zvoice:empty{display:none}
+.zvoice.warn{background:color-mix(in srgb,var(--brick) 12%,var(--paper))}
+.zvoice b{font-weight:600}
+.zread{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+.zread label{display:block;font-weight:600;font-size:.9rem;margin-bottom:4px}
+.zread textarea{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);font:inherit;font-size:16px;resize:vertical}
+.zread textarea:focus{outline:none;border-color:var(--jade)}
+.zrb{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.zrb button{all:unset;cursor:pointer;font-size:.84rem;padding:7px 14px;border-radius:999px;border:1px solid var(--jade);color:var(--jade)}
+.zrb .zgo:first-child{background:var(--jade);color:#fff}
+.zrb button.on{opacity:.6}
+.zrb button:focus-visible{outline:2px solid var(--jade);outline-offset:2px}
 .znav{display:flex;justify-content:space-between;gap:10px;margin-top:16px}
 .znav button{all:unset;cursor:pointer;font-size:.85rem;color:var(--sub);padding:6px 0}
 .znav button:disabled{opacity:.3;cursor:default}
@@ -1241,6 +1254,7 @@ footer a{color:var(--ink)}
         <div class="prog"><i id="zProg"></i></div>
         <div class="zweeks" id="zWeeks"></div>
         <p class="cs" style="margin:10px 0 0">칸을 누르면 그날 공부가 열립니다. 체크한 내용은 이 기기에만 저장됩니다.</p>
+        <p class="zvoice" id="zVoice" aria-live="polite"></p>
       </div>
 
       <div class="card zcard zday" id="zDay" aria-live="polite"></div>
@@ -1598,7 +1612,9 @@ drawVisits(); addEventListener("resize",()=>{const w=document.getElementById("ch
   const SS=window.speechSynthesis;
   if(!SS||typeof SpeechSynthesisUtterance==="undefined"){ box.classList.add("nosound"); return; }
   let voice=null;
-  const pick=()=>{ const v=SS.getVoices(); voice=v.find(x=>/zh[-_]TW/i.test(x.lang))||v.find(x=>/zh[-_](HK|Hant)/i.test(x.lang))||v.find(x=>/^zh/i.test(x.lang))||null; };
+  const pick=()=>{ const v=SS.getVoices(); const nat=x=>/Natural|Neural|Online|Premium|Enhanced/i.test(x.name)?1:0;
+    voice=v.filter(x=>/^(zh|cmn)[-_](Hant[-_])?TW/i.test(x.lang)||/Taiwan|臺灣|台灣|HsiaoChen|HsiaoYu|YunJhe|Mei-?Jia/i.test(x.name)).sort((a,b)=>nat(b)-nat(a))[0]
+      ||v.filter(x=>/^(zh|cmn)/i.test(x.lang)&&!/[-_](HK|MO)\b|yue|Cantonese/i.test(x.lang+" "+x.name))[0]||null; };
   pick(); if(SS.onvoiceschanged!==undefined) SS.onvoiceschanged=pick;
   const stop=()=>{ SS.cancel(); box.querySelectorAll(".say.on").forEach(b=>b.classList.remove("on")); };
   const speak=(btn)=>new Promise(res=>{ const u=new SpeechSynthesisUtterance(btn.dataset.say); u.lang="zh-TW"; if(voice) u.voice=voice; u.rate=.85;
